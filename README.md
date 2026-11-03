@@ -4,13 +4,15 @@
 
 ## Стек
 
-* **Frontend:** React 19, TypeScript (~5.9)
-* **Сборка:** Vite 8 (ESNext, Bundler resolution, `verbatimModuleSyntax`)
-* **UI-компоненты:** Material UI v6 (`@mui/material`, `@mui/icons-material`, `@emotion/react`)
-* **Серверное состояние и кэширование:** TanStack React Query v5
+* **Frontend:** React, TypeScript
+* **Сборка:** Vite
+* **UI-компоненты:** Material UI
+* **Серверное состояние и кэширование:** TanStack React Query
 * **Визуализация данных:** Recharts
-* **Маршрутизация:** React Router v7
+* **Маршрутизация:** React Router
 * **Генерация данных:** `@faker-js/faker/locale/ru`
+* **Тестирование:** `Vitest, React Testing Library, jsdom`
+* **Тестирование компонентов:** `Storybook 10` 
 
 ## Архитектурные решения
 
@@ -46,3 +48,16 @@
   ```
   npm run build
   ```
+
+## Тестирование
+
+**Запуск unit-тестов**
+
+```
+npm test
+```
+
+**Запуск storybook**
+```
+npm run storybook
+```
