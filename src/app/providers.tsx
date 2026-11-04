@@ -5,21 +5,21 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { theme } from './theme';
 
 const queryClient = new QueryClient({
-    defaultOptions: {
-        queries: {
-            refetchOnWindowFocus: false,
-            staleTime: 1000 * 60 * 5,
-        },
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      staleTime: 1000 * 60 * 5,
     },
+  },
 });
 
 export const Providers: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    return (
-        <QueryClientProvider client={queryClient}>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                {children}
-            </ThemeProvider>
-        </QueryClientProvider>
-    );
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
 };

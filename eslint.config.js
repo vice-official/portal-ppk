@@ -1,22 +1,12 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from "eslint-plugin-storybook";
-
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import { defineConfig, globalIgnores } from 'eslint/config'
-
-export default defineConfig([globalIgnores(['dist']), {
-  files: ['**/*.{ts,tsx}'],
-  extends: [
-    js.configs.recommended,
-    tseslint.configs.recommended,
-    reactHooks.configs.flat.recommended,
-    reactRefresh.configs.vite,
-  ],
-  languageOptions: {
-    globals: globals.browser,
-  },
-}, ...storybook.configs["flat/recommended"]])
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var js_1 = require("@eslint/js");
+var globals_1 = require("globals");
+var typescript_eslint_1 = require("typescript-eslint");
+var eslint_plugin_react_1 = require("eslint-plugin-react");
+var config_1 = require("eslint/config");
+exports.default = (0, config_1.defineConfig)([
+    { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js: js_1.default }, extends: ["js/recommended"], languageOptions: { globals: globals_1.default.browser } },
+    typescript_eslint_1.default.configs.recommended,
+    eslint_plugin_react_1.default.configs.flat.recommended,
+]);

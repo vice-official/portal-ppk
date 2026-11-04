@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
@@ -12,7 +12,7 @@ const meta: Meta<typeof RegistryFilters> = {
     decorators: [
         (Story) => (
             <ThemeProvider theme={theme}>
-                <Box sx={{ p: 3, bgcolor: 'background.default', maxWidth: 1100 }}>
+                <Box sx={{ p: 3, bgcolor: 'background.default', maxWidth: 1200 }}>
                     <Story />
                 </Box>
             </ThemeProvider>
@@ -24,6 +24,7 @@ export default meta;
 type Story = StoryObj<typeof RegistryFilters>;
 
 export const Interactive: Story = {
+    name: 'Интерактивный фильтр',
     render: () => {
         const [search, setSearch] = useState('');
         const [status, setStatus] = useState<CitizenStatus | 'all'>('all');
@@ -34,8 +35,8 @@ export const Interactive: Story = {
                 search={search}
                 status={status}
                 gender={gender}
-                filteredCount={482}
-                totalCount={100000}
+                filteredCount={500}
+                totalCount={500}
                 onSearchChange={setSearch}
                 onStatusChange={setStatus}
                 onGenderChange={setGender}
@@ -46,5 +47,35 @@ export const Interactive: Story = {
                 }}
             />
         );
+    },
+};
+
+export const WithActiveFilters: Story = {
+    name: 'С активными фильтрами',
+    args: {
+        search: 'Иванов',
+        status: 'beneficiary',
+        gender: 'male',
+        filteredCount: 14,
+        totalCount: 500,
+        onSearchChange: () => {},
+        onStatusChange: () => {},
+        onGenderChange: () => {},
+        onReset: () => {},
+    },
+};
+
+export const EmptyResults: Story = {
+    name: 'Нет совпадений',
+    args: {
+        search: 'Несуществующий гражданин',
+        status: 'all',
+        gender: 'all',
+        filteredCount: 0,
+        totalCount: 500,
+        onSearchChange: () => {},
+        onStatusChange: () => {},
+        onGenderChange: () => {},
+        onReset: () => {},
     },
 };

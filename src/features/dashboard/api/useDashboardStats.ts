@@ -3,8 +3,8 @@ import { getDashboardStats } from './getDashboardStats';
 import type { DashboardStats } from '../model/types';
 
 export const useDashboardStats = () => {
-    return useQuery<DashboardStats, Error>({
-        queryKey: ['dashboard', 'stats'],
-        queryFn: getDashboardStats,
-    });
+  return useQuery<DashboardStats, Error>({
+    queryKey: ['dashboard', 'stats'],
+    queryFn: getDashboardStats,
+  });
 };
