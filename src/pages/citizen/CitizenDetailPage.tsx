@@ -177,7 +177,7 @@ const CitizenDetailForm: FC<CitizenDetailFormProps> = ({ initialCitizen, onBack 
         </Tabs>
       </Box>
 
-      {/* Таб 1: Основные сведения */}
+      {}
       {activeTab === 0 && (
         <Card elevation={0} sx={{ p: 3, borderRadius: 3, border: 1, borderColor: 'divider' }}>
           <Grid container spacing={2.5}>
@@ -288,7 +288,7 @@ const CitizenDetailForm: FC<CitizenDetailFormProps> = ({ initialCitizen, onBack 
         </Card>
       )}
 
-      {/* Таб 2: Документы и адреса */}
+      {}
       {activeTab === 1 && (
         <Card elevation={0} sx={{ p: 3, borderRadius: 3, border: 1, borderColor: 'divider' }}>
           <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
@@ -411,7 +411,7 @@ const CitizenDetailForm: FC<CitizenDetailFormProps> = ({ initialCitizen, onBack 
         </Card>
       )}
 
-      {/* Таб 3: Семья и связи */}
+      {}
       {activeTab === 2 && (
         <FamilySection
           family={formState.family}
@@ -419,7 +419,7 @@ const CitizenDetailForm: FC<CitizenDetailFormProps> = ({ initialCitizen, onBack 
         />
       )}
 
-      {/* Таб 4: Образование */}
+      {}
       {activeTab === 3 && (
         <Card elevation={0} sx={{ p: 3, borderRadius: 3, border: 1, borderColor: 'divider' }}>
           <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>

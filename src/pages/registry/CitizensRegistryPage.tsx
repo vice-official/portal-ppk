@@ -20,7 +20,6 @@ export const CitizensRegistryPage: FC = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Статус фильтра берём непосредственно из URL
   const urlStatus = searchParams.get('status');
 
   const status: CitizenStatus | 'all' =
@@ -28,8 +27,7 @@ export const CitizensRegistryPage: FC = () => {
       ? (urlStatus as CitizenStatus)
       : 'all';
 
-  // Храним страницу вместе со статусом, для которого она была выбрана.
-  // При переходе по истории браузера на другой статус страница автоматически станет первой.
+
   const [pagination, setPagination] = useState({
     status,
     page: 1,

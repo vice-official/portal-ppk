@@ -150,7 +150,7 @@ export const FamilySection: FC<FamilySectionProps> = ({ family, onChange }) => {
         </TableContainer>
       )}
 
-      {/* Диалог добавления */}
+      {}
       <Dialog
         open={isAddDialogOpen}
         onClose={() => setIsAddDialogOpen(false)}
@@ -216,7 +216,7 @@ export const FamilySection: FC<FamilySectionProps> = ({ family, onChange }) => {
         </DialogActions>
       </Dialog>
 
-      {/* Подтверждение опасного действия (удаление) */}
+      {}
       <Dialog
         open={Boolean(deleteCandidate)}
         onClose={() => setDeleteCandidate(null)}
